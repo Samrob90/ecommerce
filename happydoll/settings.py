@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'happydoll',
     'frontend',
+    'user_auth',
+    'account',
 ]
 
 MIDDLEWARE = [

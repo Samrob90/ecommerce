@@ -2,6 +2,11 @@
 {% load static %}
 
 
+{% block head %}
+<title>happydoll | home</title>
+
+{% endblock  %}
+
 {% block header %}
     {% include 'content/layout/slider.html' %}
 {% endblock  %}
@@ -19,7 +24,7 @@
                     <div class="col mb-5" data-aos="fade-up" data-aos-delay="300">
                         <div class="feature">
                             <div class="icon text-primary align-self-center">
-                                <img src="assets/images/icons/feature-icon-2.png" alt="Feature Icon">
+                                <img src="{% static '/images/icons/feature-icon-2.png' %}" alt="Feature Icon">
                             </div>
                             <div class="content">
                                 <h5 class="title">Free Shipping</h5>
@@ -33,7 +38,7 @@
                     <div class="col mb-5" data-aos="fade-up" data-aos-delay="500">
                         <div class="feature">
                             <div class="icon text-primary align-self-center">
-                                <img src="assets/images/icons/feature-icon-3.png" alt="Feature Icon">
+                                <img src="{% static '/images/icons/feature-icon-3.png' %}" alt="Feature Icon">
                             </div>
                             <div class="content">
                                 <h5 class="title">Support 24/7</h5>
@@ -46,7 +51,7 @@
                     <div class="col mb-5" data-aos="fade-up" data-aos-delay="700">
                         <div class="feature">
                             <div class="icon text-primary align-self-center">
-                                <img src="assets/images/icons/feature-icon-4.png" alt="Feature Icon">
+                                <img src="{% static '/images/icons/feature-icon-4.png' %}" alt="Feature Icon">
                             </div>
                             <div class="content">
                                 <h5 class="title">Money Return</h5>
@@ -60,7 +65,7 @@
                     <div class="col mb-5" data-aos="fade-up" data-aos-delay="900">
                         <div class="feature">
                             <div class="icon text-primary align-self-center">
-                                <img src="assets/images/icons/feature-icon-1.png" alt="Feature Icon">
+                                <img src="{% static '/images/icons/feature-icon-1.png' %}" alt="Feature Icon">
                             </div>
                             <div class="content">
                                 <h5 class="title">Order Discount</h5>
@@ -85,7 +90,7 @@
                 <div class="col-md-6 col-12 mb-6">
                     <div class="banner" data-aos="fade-right" data-aos-delay="300">
                         <div class="banner-image">
-                            <a href="shop-grid.html"><img src="assets/images/banner/banner-4.jpg" alt="Banner Image"></a>
+                            <a href="shop-grid.html"><img src="{% static '/images/banner/banner-4.jpg' %}" alt="Banner Image"></a>
                         </div>
                         <div class="info">
                             <div class="small-banner-content">
@@ -102,7 +107,7 @@
                 <div class="col-md-6 col-12 mb-6">
                     <div class="banner" data-aos="fade-left" data-aos-delay="500">
                         <div class="banner-image">
-                            <a href="shop-grid.html"><img src="assets/images/banner/banner-5.jpg" alt="Banner Image"></a>
+                            <a href="shop-grid.html"><img src="{% static '/images/banner/banner-5.jpg' %}" alt="Banner Image"></a>
                         </div>
                         <div class="info">
                             <div class="small-banner-content">
@@ -154,8 +159,8 @@
                                             <div class="product product-border-left mb-10" data-aos="fade-up" data-aos-delay="300">
                                                 <div class="thumb">
                                                     <a href="single-product.html" class="image">
-                                                        <img class="first-image" src="assets/images/products/medium-size/1.jpg" alt="Product" />
-                                                        <img class="second-image" src="assets/images/products/medium-size/5.jpg" alt="Product" />
+                                                        <img class="first-image" src="{% static '/images/products/medium-size/1.jpg' %}" alt="Product" />
+                                                        <img class="second-image" src="{% static '/images/products/medium-size/5.jpg' %}" alt="Product" />
                                                     </a>
                                                     <div class="actions">
                                                         <a href="#" class="action wishlist"><i class="pe-7s-like"></i></a>
@@ -185,8 +190,8 @@
                                             <div class="product product-border-left" data-aos="fade-up" data-aos-delay="400">
                                                 <div class="thumb">
                                                     <a href="single-product.html" class="image">
-                                                        <img class="first-image" src="assets/images/products/medium-size/2.jpg" alt="Product" />
-                                                        <img class="second-image" src="assets/images/products/medium-size/3.jpg" alt="Product" />
+                                                        <img class="first-image" src="{% static '/images/products/medium-size/2.jpg' %}" alt="Product" />
+                                                        <img class="second-image" src="{% static '/images/products/medium-size/3.jpg' %}" alt="Product" />
                                                     </a>
                                                     <div class="actions">
                                                         <a href="#" class="action wishlist"><i class="pe-7s-like"></i></a>
@@ -222,8 +227,8 @@
                                             <div class="product product-border-left mb-10" data-aos="fade-up" data-aos-delay="400">
                                                 <div class="thumb">
                                                     <a href="single-product.html" class="image">
-                                                        <img class="first-image" src="assets/images/products/medium-size/4.jpg" alt="Product" />
-                                                        <img class="second-image" src="assets/images/products/medium-size/10.jpg" alt="Product" />
+                                                        <img class="first-image" src="{% static '/images/products/medium-size/4.jpg' %}" alt="Product" />
+                                                        <img class="second-image" src="{% static '/images/products/medium-size/10.jpg' %}" alt="Product" />
                                                     </a>
                                                     <span class="badges">
 															<span class="sale">New</span>
@@ -256,8 +261,8 @@
                                             <div class="product product-border-left" data-aos="fade-up" data-aos-delay="500">
                                                 <div class="thumb">
                                                     <a href="single-product.html" class="image">
-                                                        <img class="first-image" src="assets/images/products/medium-size/5.jpg" alt="Product" />
-                                                        <img class="second-image" src="assets/images/products/medium-size/6.jpg" alt="Product" />
+                                                        <img class="first-image" src="{% static '/images/products/medium-size/5.jpg' %}" alt="Product" />
+                                                        <img class="second-image" src="{% static '/images/products/medium-size/6.jpg' %}" alt="Product" />
                                                     </a>
                                                     <span class="badges">
 															<span class="sale">Sold</span>
@@ -296,8 +301,8 @@
                                             <div class="product product-border-left mb-10" data-aos="fade-up" data-aos-delay="500">
                                                 <div class="thumb">
                                                     <a href="single-product.html" class="image">
-                                                        <img class="first-image" src="assets/images/products/medium-size/7.jpg" alt="Product" />
-                                                        <img class="second-image" src="assets/images/products/medium-size/9.jpg" alt="Product" />
+                                                        <img class="first-image" src="{% static '/images/products/medium-size/7.jpg' %}" alt="Product" />
+                                                        <img class="second-image" src="{% static '/images/products/medium-size/9.jpg' %}" alt="Product" />
                                                     </a>
                                                     <div class="actions">
                                                         <a href="#" class="action wishlist"><i class="pe-7s-like"></i></a>
@@ -326,8 +331,8 @@
                                             <div class="product product-border-left" data-aos="fade-up" data-aos-delay="600">
                                                 <div class="thumb">
                                                     <a href="single-product.html" class="image">
-                                                        <img class="first-image" src="assets/images/products/medium-size/10.jpg" alt="Product" />
-                                                        <img class="second-image" src="assets/images/products/medium-size/4.jpg" alt="Product" />
+                                                        <img class="first-image" src="{% static '/images/products/medium-size/10.jpg' %}" alt="Product" />
+                                                        <img class="second-image" src="{% static '/images/products/medium-size/4.jpg' %}" alt="Product" />
                                                     </a>
                                                     <div class="actions">
                                                         <a href="#" class="action wishlist"><i class="pe-7s-like"></i></a>
@@ -363,8 +368,8 @@
                                             <div class="product product-border-left mb-10" data-aos="fade-up" data-aos-delay="600">
                                                 <div class="thumb">
                                                     <a href="single-product.html" class="image">
-                                                        <img class="first-image" src="assets/images/products/medium-size/11.jpg" alt="Product" />
-                                                        <img class="second-image" src="assets/images/products/medium-size/10.jpg" alt="Product" />
+                                                        <img class="first-image" src="{% static '/images/products/medium-size/11.jpg' %}" alt="Product" />
+                                                        <img class="second-image" src="{%  static '/images/products/medium-size/10.jpg' %}" alt="Product" />
                                                     </a>
                                                     <div class="actions">
                                                         <a href="#" class="action wishlist"><i class="pe-7s-like"></i></a>
@@ -394,8 +399,8 @@
                                             <div class="product product-border-left" data-aos="fade-up" data-aos-delay="700">
                                                 <div class="thumb">
                                                     <a href="single-product.html" class="image">
-                                                        <img class="first-image" src="assets/images/products/medium-size/3.jpg" alt="Product" />
-                                                        <img class="second-image" src="assets/images/products/medium-size/5.jpg" alt="Product" />
+                                                        <img class="first-image" src="{% static '/images/products/medium-size/3.jpg' %}" alt="Product" />
+                                                        <img class="second-image" src="{% static '/images/products/medium-size/5.jpg' %}" alt="Product" />
                                                     </a>
                                                     <div class="actions">
                                                         <a href="#" class="action wishlist"><i class="pe-7s-like"></i></a>
@@ -430,8 +435,8 @@
                                             <div class="product product-border-left mb-10" data-aos="fade-up" data-aos-delay="700">
                                                 <div class="thumb">
                                                     <a href="single-product.html" class="image">
-                                                        <img class="first-image" src="assets/images/products/medium-size/7.jpg" alt="Product" />
-                                                        <img class="second-image" src="assets/images/products/medium-size/9.jpg" alt="Product" />
+                                                        <img class="first-image" src="{% static '/images/products/medium-size/7.jpg' %}" alt="Product" />
+                                                        <img class="second-image" src="{% static '/images/products/medium-size/9.jpg' %}" alt="Product" />
                                                     </a>
                                                     <div class="actions">
                                                         <a href="#" class="action wishlist"><i class="pe-7s-like"></i></a>
@@ -460,8 +465,8 @@
                                             <div class="product product-border-left" data-aos="fade-up" data-aos-delay="800">
                                                 <div class="thumb">
                                                     <a href="single-product.html" class="image">
-                                                        <img class="first-image" src="assets/images/products/medium-size/10.jpg" alt="Product" />
-                                                        <img class="second-image" src="assets/images/products/medium-size/4.jpg" alt="Product" />
+                                                        <img class="first-image" src="/images/products/medium-size/10.jpg" alt="Product" />
+                                                        <img class="second-image" src="/images/products/medium-size/4.jpg" alt="Product" />
                                                     </a>
                                                     <div class="actions">
                                                         <a href="#" class="action wishlist"><i class="pe-7s-like"></i></a>
@@ -1744,90 +1749,7 @@
     </div>
     <!-- Brand Logo End -->
 
-    <!-- Blog Section Start -->
-    <div class="section section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="section-title" data-aos="fade-up" data-aos-delay="300">
-                    <h2 class="title pb-3">Latest Blog</h2>
-                    <div class="title-border-bottom"></div>
-                </div>
-            </div>
-            <div class="row mb-n6">
-
-                <div class="col-lg-4 col-md-6 col-12 mb-6" data-aos="fade-up" data-aos-delay="300">
-
-                    <!-- Blog Single Post Start -->
-                    <div class="blog-single-post-wrapper">
-                        <div class="blog-thumb">
-                            <a class="blog-overlay" href="blog-details.html">
-                                <img class="fit-image" src="assets/images/blog/blog-post/1.jpg" alt="Blog Post">
-                            </a>
-                        </div>
-                        <div class="blog-content">
-                            <div class="post-meta">
-                                <span>By : <a href="#">Admin</a></span>
-                                <span>14 Jul 2021</span>
-                            </div>
-                            <h3 class="title"><a href="blog-details.html">Some Winter Collections</a></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisici elit, sed do eiusmod tempo</p>
-                            <a href="blog-details.html" class="btn btn-dark btn-hover-primary text-uppercase">Read More</a>
-                        </div>
-                    </div>
-                    <!-- Blog Single Post End -->
-
-                </div>
-
-                <div class="col-lg-4 col-md-6 col-12 mb-6" data-aos="fade-up" data-aos-delay="500">
-
-                    <!-- Blog Single Post Start -->
-                    <div class="blog-single-post-wrapper">
-                        <div class="blog-thumb">
-                            <a class="blog-overlay" href="blog-details.html">
-                                <img class="fit-image" src="assets/images/blog/blog-post/2.jpg" alt="Blog Post">
-                            </a>
-                        </div>
-                        <div class="blog-content">
-                            <div class="post-meta">
-                                <span>By : <a href="#">Admin</a></span>
-                                <span>14 Jul 2021</span>
-                            </div>
-                            <h3 class="title"><a href="blog-details.html">My Perty Fashion</a></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisici elit, sed do eiusmod tempo</p>
-                            <a href="blog-details.html" class="btn btn-dark btn-hover-primary text-uppercase">Read More</a>
-                        </div>
-                    </div>
-                    <!-- Blog Single Post End -->
-
-                </div>
-
-                <div class="col-lg-4 col-md-6 col-12 mb-6" data-aos="fade-up" data-aos-delay="700">
-
-                    <!-- Blog Single Post Start -->
-                    <div class="blog-single-post-wrapper">
-                        <div class="blog-thumb">
-                            <a class="blog-overlay" href="blog-details.html">
-                                <img class="fit-image" src="assets/images/blog/blog-post/3.jpg" alt="Blog Post">
-                            </a>
-                        </div>
-                        <div class="blog-content">
-                            <div class="post-meta">
-                                <span>By : <a href="#">Admin</a></span>
-                                <span>14 Jul 2021</span>
-                            </div>
-                            <h3 class="title"><a href="blog-details.html">Perfect Fashion House</a></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisici elit, sed do eiusmod tempo</p>
-                            <a href="blog-details.html" class="btn btn-dark btn-hover-primary text-uppercase">Read More</a>
-                        </div>
-                    </div>
-                    <!-- Blog Single Post End -->
-
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <!-- Blog Section End -->
+ 
 
     <!-- Footer Section Start -->
     <footer class="section footer-section">

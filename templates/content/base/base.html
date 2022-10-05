@@ -5,7 +5,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Destry - Fashion eCommerce HTML Template</title>
+    
+    {% block head %}
+
+    {% endblock  %}
+        
     <!-- Favicons -->
     <link rel="shortcut icon" href="{% static '/images/favicon.ico' %}">
 
@@ -106,81 +110,24 @@
                             <div class="main-menu position-relative">
                                 <ul>
                                     <li class="has-children">
-                                        <a href="#"><span>Home</span> <i class="fa fa-angle-down"></i></a>
-                                        <ul class="sub-menu">
-                                            <li><a href="index.html">Home 1</a></li>
-                                            <li><a href="index-2.html">Home 2</a></li>
-                                        </ul>
+                                        <a href="/"><span>Home</span></a>
                                     </li>
                                     <li class="has-children position-static">
-                                        <a href="#"><span>Shop</span> <i class="fa fa-angle-down"></i></a>
-                                        <ul class="mega-menu row-cols-4">
-                                            <li class="col">
-                                                <h4 class="mega-menu-title">Shop Layout</h4>
-                                                <ul class="mb-n2">
-                                                    <li><a href="shop-grid.html">Shop Grid</a></li>
-                                                    <li><a href="shop-left-sidebar.html">Left Sidebar</a></li>
-                                                    <li><a href="shop-right-sidebar.html">Right Sidebar</a></li>
-                                                    <li><a href="shop-list-fullwidth.html">List Fullwidth</a></li>
-                                                    <li><a href="shop-list-left-sidebar.html">List Left Sidebar</a></li>
-                                                    <li><a href="shop-list-right-sidebar.html">List Right Sidebar</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="col">
-                                                <h4 class="mega-menu-title">Product Layout</h4>
-                                                <ul class="mb-n2">
-                                                    <li><a href="single-product.html">Single Product</a></li>
-                                                    <li><a href="single-product-sale.html">Single Product Sale</a></li>
-                                                    <li><a href="single-product-group.html">Single Product Group</a></li>
-                                                    <li><a href="single-product-normal.html">Single Product Normal</a></li>
-                                                    <li><a href="single-product-affiliate.html">Single Product Affiliate</a></li>
-                                                    <li><a href="single-product-slider.html">Single Product Slider</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="col">
-                                                <h4 class="mega-menu-title">Product Layout</h4>
-                                                <ul class="mb-n2">
-                                                    <li><a href="single-product-gallery-left.html">Gallery Left</a></li>
-                                                    <li><a href="single-product-gallery-right.html">Gallery Right</a></li>
-                                                    <li><a href="single-product-tab-style-left.html">Tab Style Left</a></li>
-                                                    <li><a href="single-product-tab-style-right.html">Tab Style Right</a></li>
-                                                    <li><a href="single-product-sticky-left.html">Sticky Left</a></li>
-                                                    <li><a href="single-product-sticky-right.html">Sticky Right</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="col">
-                                                <h4 class="mega-menu-title">Other Pages</h4>
-                                                <ul class="mb-n2">
-                                                    <li><a href="my-account.html">My Account</a></li>
-                                                    <li><a href="login-register.html">Loging | Register</a></li>
-                                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                                    <li><a href="cart.html">Cart</a></li>
-                                                    <li><a href="checkout.html">Checkout</a></li>
-                                                    <li><a href="compare.html">Compare</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
+                                        <a href="{% url 'shop' %}"><span>Shop</span> </a>
+                                       
                                     </li>
                                     <li class="has-children">
-                                        <a href="#"><span>Pages</span> <i class="fa fa-angle-down"></i></a>
+                                        <a href="#"><span>Products</span> <i class="fa fa-angle-down"></i></a>
                                         <ul class="sub-menu">
-                                            <li><a href="about.html">About</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
-                                            <li><a href="faq.html">Faq</a></li>
-                                            <li><a href="404-error.html">404 Error</a></li>
+                                            <li><a href="about.html">Women</a></li>
+                                            <li><a href="{% url 'contact' %}">Men</a></li>
+                                            <li><a href="faq.html">Shemal</a></li>
+                                            {% comment %} <li><a href="404-error.html">404 Error</a></li> {% endcomment %}
                                         </ul>
                                     </li>
-                                    <li class="has-children">
-                                        <a href="#"><span>Blog</span> <i class="fa fa-angle-down"></i></a>
-                                        <ul class="sub-menu">
-                                            <li><a href="blog.html">Blog</a></li>
-                                            <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-                                            <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                                            <li><a href="blog-details.html">Blog Details</a></li>
-                                            <li><a href="blog-details-sidebar.html">Blog Details Sidebar</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="contact.html"> <span>Contact</span></a></li>
+                                  
+                                    <li><a href="{% url 'aboutus' %}"> <span>About Us</span></a></li>
+                                    <li><a href="{% url 'contact' %}"> <span>Contact</span></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -195,11 +142,11 @@
                                 <!-- Search Header Action Button End -->
 
                                 <!-- User Account Header Action Button Start -->
-                                <a href="login-register.html" class="header-action-btn d-none d-md-block"><i class="pe-7s-user"></i></a>
+                                <a href="{% url 'login' %}" class="header-action-btn d-none d-md-block"><i class="pe-7s-user"></i></a>
                                 <!-- User Account Header Action Button End -->
 
                                 <!-- Wishlist Header Action Button Start -->
-                                <a href="wishlist.html" class="header-action-btn header-action-btn-wishlist d-none d-md-block">
+                                <a href="{% url 'wishlist' %}" class="header-action-btn header-action-btn-wishlist d-none d-md-block">
                                     <i class="pe-7s-like"></i>
                                 </a>
                                 <!-- Wishlist Header Action Button End -->
@@ -252,60 +199,21 @@
                                 </ul>
                             </li>
                             <li class="has-children">
-                                <a href="#">Shop <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                                <ul class="dropdown">
-                                    <li><a href="shop-grid.html">Shop Grid</a></li>
-                                    <li><a href="shop-left-sidebar.html">Shop Left Sidebar</a></li>
-                                    <li><a href="shop-right-sidebar.html">Shop Right Sidebar</a></li>
-                                    <li><a href="shop-list-fullwidth.html">Shop List Fullwidth</a></li>
-                                    <li><a href="shop-list-left-sidebar.html">Shop List Left Sidebar</a></li>
-                                    <li><a href="shop-list-right-sidebar.html">Shop List Right Sidebar</a></li>
-                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                    <li><a href="cart.html">Shopping Cart</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
-                                    <li><a href="compare.html">Compare</a></li>
-                                </ul>
+                                <a href="{% url 'shop' %}">Shop <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                              
                             </li>
                             <li class="has-children">
                                 <a href="#">Product <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                 <ul class="dropdown">
-                                    <li><a href="single-product.html">Single Product</a></li>
-                                    <li><a href="single-product-sale.html">Single Product Sale</a></li>
-                                    <li><a href="single-product-group.html">Single Product Group</a></li>
-                                    <li><a href="single-product-normal.html">Single Product Normal</a></li>
-                                    <li><a href="single-product-affiliate.html">Single Product Affiliate</a></li>
-                                    <li><a href="single-product-slider.html">Single Product Slider</a></li>
-                                    <li><a href="single-product-gallery-left.html">Gallery Left</a></li>
-                                    <li><a href="single-product-gallery-right.html">Gallery Right</a></li>
-                                    <li><a href="single-product-tab-style-left.html">Tab Style Left</a></li>
-                                    <li><a href="single-product-tab-style-right.html">Tab Style Right</a></li>
-                                    <li><a href="single-product-sticky-left.html">Sticky Left</a></li>
-                                    <li><a href="single-product-sticky-right.html">Sticky Right</a></li>
+                                    <li><a href="#">Men</a></li>
+                                    <li><a href="#">Women</a></li>
+                                    <li><a href="#">Shemal</a></li>
+                                    
                                 </ul>
                             </li>
-                            <li class="has-children">
-                                <a href="#">Pages <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                                <ul class="dropdown">
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                    <li><a href="faq.html">Faq</a></li>
-                                    <li><a href="404-error.html">Error 404</a></li>
-                                    <li><a href="my-account.html">My Account</a></li>
-                                    <li><a href="login-register.html">Loging | Register</a></li>
-                                </ul>
-                            </li>
-                            <li class="has-children">
-                                <a href="#">Blog <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                                <ul class="dropdown">
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-                                    <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                                    <li><a href="blog-details.html">Blog Details</a></li>
-                                    <li><a href="blog-details-sidebar.html">Blog Details Sidebar</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            
+                            <li><a href="{% url 'aboutus' %}">About</a></li>
+                            <li><a href="{% url 'contact' %}">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -491,8 +399,8 @@
 
                     <!-- Cart Product Button Start -->
                     <div class="cart-product-btn mt-4">
-                        <a href="cart.html" class="btn btn-dark btn-hover-primary rounded-0 w-100">View cart</a>
-                        <a href="checkout.html" class="btn btn-dark btn-hover-primary rounded-0 w-100 mt-4">Checkout</a>
+                        <a href="{% url 'cart' %}" class="btn btn-dark btn-hover-primary rounded-0 w-100">View cart</a>
+                        <a href="{% url 'checkout' %}" class="btn btn-dark btn-hover-primary rounded-0 w-100 mt-4">Checkout</a>
                     </div>
                     <!-- Cart Product Button End -->
 
@@ -518,6 +426,14 @@
   {% block content_body %}
     
   {% endblock  %}
+
+
+
+  
+  {% block footer %}
+    
+  {% endblock %}
+    
     
 
     <!-- Scripts -->
