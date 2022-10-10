@@ -1,0 +1,62 @@
+{% extends 'content/base/base.html' %}
+{% load static %}
+
+
+{% block head %}
+<title> happydoll | add new product </title>
+{% endblock head %}
+
+
+{% block content_body %}
+
+<div class="section section-margin">
+    <div class="container" style="margin:0 auto!important;">
+        <div class="col-sm-8">
+            <div class="card shadow border">
+                <div class="card-header">
+                    <p class="text-muted">Upload new product</p>
+                </div>
+                <div class="card-body">
+                    <form method="post" action="{% url 'upload' %}" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Product title </label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                placeholder="Enter Title" name="title">
+
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Product price </label>
+                            <input type="number" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="price" name="price">
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Product category </label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                placeholder="Enter category" name="category">
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Product description </label>
+                            <textarea name="description" id="" cols="30" rows="10" class="form-control"></textarea>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Product images </label>
+                            <input type="file" name="file" id="file" multiple />
+
+                        </div>
+
+
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content_body %}
