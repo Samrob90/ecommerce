@@ -1,5 +1,6 @@
 {% extends 'content/base/base.html' %}
-
+{% load static %}
+{% load frontend_extras %}
 
 {% block head %}
      <title>happydoll | Shop </title>
@@ -85,16 +86,20 @@
                         <!-- Shop Wrapper Start -->
                         <div class="row shop_wrapper grid_3">
     
-                            {{products}}
                             
                             {% for i in products %}
                                 <!-- Single Product Start -->
                             <div class="col-lg-4 col-md-4 col-sm-6 product" data-aos="fade-up" data-aos-delay="300">
                                 <div class="product-inner">
                                     <div class="thumb">
-                                        <a href="single-product.html" class="image">
-                                            <img class="first-image" src="{{ i.images.all}}" alt="Product" />
-                                            <img class="second-image" src="assets/images/products/medium-size/10.jpg" alt="Product" />
+                                        <a href="/item/{{i.slug}}" class="image" style="text-align:center!important;">
+
+                                                
+                                                 <img class="first-image" src="MEDIA/thumbnail/{{i.thumbnail|convert_string_to_array:0}}" alt="Product"  style="height:300px; width:90%!important;background-re" />
+                                                 <img class="second-image" src="MEDIA/thumbnail/{{i.thumbnail|convert_string_to_array:1}}" alt="Product" style="height:300px; width:100%!important;background-re" /> 
+                                           
+                                                
+                          
                                         </a>
                                         <div class="actions">
                                             <a href="wishlist.html" title="Wishlist" class="action wishlist"><i class="pe-7s-like"></i></a>
@@ -103,14 +108,15 @@
                                         </div>
                                     </div>
                                     <div class="content">
-                                        <h4 class="sub-title"><a href="single-product.html">{{i.category}}</a></h4>
-                                        <h5 class="title"><a href="single-product.html">{{i.title}}
-
+                                        <h4 class="sub-title"><a href="">{{i.category}}</a></h4>
+                                        <h5 class="title"><a href="">
                                             
-                                        
-                                        {% for images in i.many_set.all %}
-                                        {{images}}
-                                        {% endfor %}
+                                            {% if i.title|length > 20  %}
+                                                {{ i.title|truncatechars:20 }}
+                                                {% else %}
+                                                {{i.title}}
+                                            {% endif %}
+
                                         </a></h5>
                                         <span class="ratings">
                                                 <span class="rating-wrap">
@@ -118,7 +124,8 @@
                                         </span>
                                         <span class="rating-num">(4)</span>
                                         </span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus vitae arcu imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae urna fringilla tempus.</p>
+                                        <p>
+                                            {{ i.description|truncatechars:200 }}</p>
                                         <span class="price">
                                                 <span class="new">$38.50</span>
                                         <span class="old">{{i.price}}</span>
@@ -329,13 +336,13 @@
                                         <!-- Single Product List Start -->
                                         <div class="single-product-list product-hover mb-6">
                                             <div class="thumb">
-                                                <a href="single-product.html" class="image">
+                                                <a href="" class="image">
                                                     <img class="first-image" src="assets/images/products/small-product/1.jpg" alt="Product" />
                                                     <img class="second-image" src="assets/images/products/small-product/5.jpg" alt="Product" />
                                                 </a>
                                             </div>
                                             <div class="content">
-                                                <h5 class="title"><a href="single-product.html">Brother Hoddies in Grey</a></h5>
+                                                <h5 class="title"><a href="">Brother Hoddies in Grey</a></h5>
                                                 <span class="price">
                                                         <span class="new">$38.00</span>
                                                 <span class="old">$42.50</span>
@@ -353,13 +360,13 @@
                                         <!-- Single Product List Start -->
                                         <div class="single-product-list product-hover mb-6">
                                             <div class="thumb">
-                                                <a href="single-product.html" class="image">
+                                                <a href="" class="image">
                                                     <img class="first-image" src="assets/images/products/small-product/2.jpg" alt="Product" />
                                                     <img class="second-image" src="assets/images/products/small-product/3.jpg" alt="Product" />
                                                 </a>
                                             </div>
                                             <div class="content">
-                                                <h5 class="title"><a href="single-product.html">Basic Jogging Shorts</a></h5>
+                                                <h5 class="title"><a href="">Basic Jogging Shorts</a></h5>
                                                 <span class="price">
                                                         <span class="new">$21.00</span>
                                                 <span class="old">$22.50</span>
@@ -377,13 +384,13 @@
                                         <!-- Single Product List Start -->
                                         <div class="single-product-list product-hover mb-6">
                                             <div class="thumb">
-                                                <a href="single-product.html" class="image">
+                                                <a href="" class="image">
                                                     <img class="first-image" src="assets/images/products/small-product/4.jpg" alt="Product" />
                                                     <img class="second-image" src="assets/images/products/small-product/10.jpg" alt="Product" />
                                                 </a>
                                             </div>
                                             <div class="content">
-                                                <h5 class="title"><a href="single-product.html">Simple Woven Fabrics</a></h5>
+                                                <h5 class="title"><a href="">Simple Woven Fabrics</a></h5>
                                                 <span class="price">
                                                         <span class="new">$86.00</span>
                                                 <span class="old">$90.00</span>

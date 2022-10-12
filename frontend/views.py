@@ -1,3 +1,5 @@
+from pyexpat import model
+import string
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.views.generic.detail import DetailView
@@ -5,7 +7,14 @@ from django.views.generic.list import ListView
 from django.utils import timezone
 from . import models as db
 
+
 # Create your views here.
+
+
+# @register.filter
+# def split(value):
+#     list = value.split(" ")
+#     return [list[0], list[1]]
 
 
 class Home(TemplateView):
@@ -22,7 +31,6 @@ class AboutUs(TemplateView):
 
 class Shop(ListView):
     model = db.products
-    context = {"products": db.products.objects.all()}
     template_name = "content/shop.html"
     context_object_name = "products"
     # queryset = model.objects.all()
@@ -43,3 +51,15 @@ class WishList(TemplateView):
 
 class CheckOut(TemplateView):
     template_name = 'content/checkout.html'
+
+
+class viewProduct(DetailView):
+    model = db.products
+    template_name = "content/product_details.html"
+    context_object_name = "items"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        product = self.get_object()
+        context['images'] = db.images.objects.filter(products=product)
+        return context
